@@ -16,7 +16,7 @@
     opacity: 0.4;
 
     font-size: calc(var(--index) * 2);
-    padding: calc(var(--index) * 4) 0;
+    padding: calc(var(--index) * 4) calc(var(--index) * 0.5);
 
     font-weight: 900;
 
