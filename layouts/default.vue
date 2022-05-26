@@ -67,7 +67,7 @@
 
     &:hover {
       transform: translateY(-2px);
-      filter: drop-shadow(0 4px 2px rgba(0, 98, 189, 0.5));
+      filter: drop-shadow(0 2px 1px rgba(0, 98, 189, 0.5));
     }
   }
 </style>
