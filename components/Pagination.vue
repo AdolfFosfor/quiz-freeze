@@ -1,5 +1,5 @@
 <template>
-  <div class="pagination noSelect">12 / 30</div>
+  <div ref="pagination" class="pagination smooth-in noSelect">{{ $route.params.id }} / 30</div>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
   <Grid class="app" center-j center-i>
-    <Pagination />
+    <Pagination v-if="$route.name === 'quiz-id'" />
     <Account />
 
     <Nuxt />

@@ -1,44 +1,37 @@
 <template>
-  <Grid class="question" column center-i center-j>
-    <div class="text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis, culpa cupiditate error fugiat illum in maiores
-      maxime molestiae non optio possimus quaerat repellendus reprehenderit voluptates? Dolorem ea quod voluptatum.
-    </div>
-
-    <Grid :column="mobile">
-      <Button v-for="(item, i) of 4" :key="i" style="margin: calc(var(--index) * 1) calc(var(--index) * 0.5)" @onClick="log(item)"
-        >Hello World</Button
-      >
+  <div ref="page" class="main-page">
+    <Grid column center-i center-j>
+      <Button :to="`/quiz/1`"> Start Quiz </Button>
     </Grid>
-  </Grid>
+  </div>
 </template>
 
 <script>
   import { mapState } from 'vuex';
   import Button from '@/components/Atoms/Button';
-  import Grid from '~/components/Atoms/Grid';
+  import Grid from '@/components/Atoms/Grid';
+
   export default {
     components: { Grid, Button },
     computed: {
       ...mapState(['mobile']),
     },
 
-    methods: {
-      log(e) {
-        console.log(`Hello Button №${e}`);
-      },
+    mounted() {
+      this.$refs.page.classList.add('fade-in');
+    },
+
+    beforeDestroy() {
+      this.$refs.page.classList.remove('fade-in');
+      this.$refs.page.classList.add('fade-out');
     },
   };
 </script>
 
 <style>
-  .question {
+  .main-page {
     max-width: 80%;
 
     text-align: center;
-  }
-  .text {
-    font-size: calc(var(--index) * 1.4);
-    margin-bottom: 2rem;
   }
 </style>
