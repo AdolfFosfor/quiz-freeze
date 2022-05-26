@@ -27,10 +27,10 @@
       ...mapState(['mobile']),
     },
     mounted() {
+      this.setMobile(window.innerWidth < 768);
       this.$nextTick(() => {
         window.addEventListener('resize', this.onResize);
       });
-      this.setMobile(window.innerWidth < 768);
     },
     beforeDestroy() {
       window.removeEventListener('resize', this.onResize);

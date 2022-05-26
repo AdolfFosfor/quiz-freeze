@@ -3,9 +3,18 @@
     class="noSelect"
     :style="`${
       $store.state.mobile
-        ? 'padding: calc(var(--index) * 2) calc(var(--index) * 2); font-size: calc(var(--index) * 1.1); border-radius: calc(var(--index) * 0.8); width: 70vw'
-        : 'padding: calc(var(--index) * 1) calc(var(--index) * 2); font-size: calc(var(--index) * 0.7); border-radius: calc(var(--index) * 0.6);'
-    };`"
+        ? `
+        padding: calc(var(--index) * 2) calc(var(--index) * 2);
+        font-size: calc(var(--index) * 1.1);
+        border-radius: calc(var(--index) * 0.8); width: 70vw;`
+        : `
+        padding: calc(var(--index) * 1) calc(var(--index) * 2);
+        font-size: calc(var(--index) * 0.7);
+        border-radius: calc(var(--index) * 0.6);
+          `
+    }
+    ${full ? 'width: 100%;' : ''}
+    `"
     @click="$emit('onClick', $event)"
   >
     <nuxt-link v-if="to" :to="to" class="link" />
@@ -21,6 +30,7 @@
         type: String,
         default: undefined,
       },
+      full: Boolean,
     },
   };
 </script>
