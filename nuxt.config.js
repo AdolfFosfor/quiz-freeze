@@ -33,7 +33,7 @@ export default {
       name: 'Quiz Freeze',
       lang: 'ru',
       short_name: 'quiz-freeze',
-      theme_color: '#0062bd',
+      theme_color: '#1e1e20',
     },
     meta: {
       mobileAppIOS: true,

@@ -4,12 +4,13 @@
 
 :root {
   --color-primary: #0062bd;
+  --color-dark: #1e1e20;
   --index: calc(1vw + 1vh);
   --gap: 1em;
 }
 
 html, body {
-  background: #1e1e20;
+  background: var(--color-dark);
   font-family: 'Mulish', sans-serif;
   font-size: var(--index);
 
