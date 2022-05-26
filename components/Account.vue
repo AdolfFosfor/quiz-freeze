@@ -31,7 +31,7 @@
       border-radius: 50%;
       cursor: pointer;
 
-      padding: calc(var(--index) * 1.5);
+      padding: calc(var(--index) * 2);
       border: calc(var(--index) * 0.15) solid transparent;
 
       transition: all 0.2s ease-in-out;
