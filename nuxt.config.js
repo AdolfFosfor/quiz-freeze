@@ -19,7 +19,7 @@ export default {
 
   components: true,
 
-  buildModules: [],
+  buildModules: ['@nuxtjs/pwa'],
 
   modules: [],
 
