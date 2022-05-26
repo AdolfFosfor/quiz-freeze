@@ -39,8 +39,8 @@
       transform: scale(1.05);
 
       img {
-        width: calc(var(--index) * 5);
-        height: calc(var(--index) * 5);
+        width: calc(var(--index) * 6);
+        height: calc(var(--index) * 6);
         object-fit: cover;
 
         position: absolute;
