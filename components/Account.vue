@@ -32,15 +32,15 @@
       cursor: pointer;
 
       padding: calc(var(--index) * 1.5);
-      border: calc(var(--index) * 0.2) solid transparent;
+      border: calc(var(--index) * 0.15) solid transparent;
 
       transition: all 0.2s ease-in-out;
 
       transform: scale(1.05);
 
       img {
-        width: 140%;
-        height: 140%;
+        width: calc(var(--index) * 5);
+        height: calc(var(--index) * 5);
         object-fit: cover;
 
         position: absolute;
@@ -51,11 +51,11 @@
       }
 
       &:hover {
-        border: calc(var(--index) * 0.2) solid var(--color-primary);
+        border: calc(var(--index) * 0.15) solid var(--color-primary);
         transform: scale(1.2);
 
         img {
-          transform: scale(0.85);
+          transform: scale(0.8);
         }
       }
     }

@@ -6,7 +6,9 @@
     </div>
 
     <Grid :column="mobile">
-      <Button v-for="(item, i) of 4" :key="i" style="margin: calc(var(--index) * 0.5)" @onClick="log(item)">Hello World</Button>
+      <Button v-for="(item, i) of 4" :key="i" style="margin: calc(var(--index) * 1) calc(var(--index) * 0.5)" @onClick="log(item)"
+        >Hello World</Button
+      >
     </Grid>
   </Grid>
 </template>
@@ -36,6 +38,7 @@
     text-align: center;
   }
   .text {
+    font-size: calc(var(--index) * 1.4);
     margin-bottom: 2rem;
   }
 </style>
