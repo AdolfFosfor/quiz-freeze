@@ -59,8 +59,15 @@
 
     width: calc(var(--index) * 5);
 
+    transition: all 200ms ease-in-out;
+
     img {
       width: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      filter: drop-shadow(0 4px 2px rgba(0, 98, 189, 0.5));
     }
   }
 </style>
