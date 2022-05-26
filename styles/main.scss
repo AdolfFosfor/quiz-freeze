@@ -9,7 +9,7 @@
   --gap: 1em;
 }
 
-html, body {
+body {
   background: var(--color-dark);
   font-family: 'Mulish', sans-serif;
   font-size: var(--index);
@@ -17,6 +17,7 @@ html, body {
   margin: 0;
   padding: 0;
 
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -32,7 +33,7 @@ input {
 }
 
 * {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   box-sizing: border-box;
   position: relative;
 
