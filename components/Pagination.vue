@@ -1,13 +1,25 @@
 <template>
-$END$
+  <div class="pagination noSelect">12 / 30</div>
 </template>
 
 <script>
-export default {
-name: "Pagination"
-}
+  export default {
+    name: 'Pagination',
+  };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .pagination {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
 
+    font-size: calc(var(--index) * 2);
+    padding: calc(var(--index) * 4) 0;
+
+    font-weight: 900;
+
+    transform: rotate(90deg);
+  }
 </style>

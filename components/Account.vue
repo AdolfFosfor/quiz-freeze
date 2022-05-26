@@ -1,13 +1,63 @@
 <template>
-$END$
+  <Grid class="account" center-j center-i>
+    <Grid class="button fade-fast" center-j center-i>
+      <img
+        src="https://images.unsplash.com/photo-1622615875737-0d959726e947?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
+        alt="Arab"
+      />
+    </Grid>
+  </Grid>
 </template>
 
 <script>
-export default {
-name: "Account"
-}
+  import Grid from '@/components/Atoms/Grid';
+  export default {
+    name: 'Account',
+    components: { Grid },
+  };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .account {
+    position: absolute;
+    top: 0;
+    right: 0;
 
+    padding: calc(var(--index) * 2) calc(var(--index) * 3);
+
+    .button {
+      overflow: hidden;
+      background-color: #a9a9a9;
+      border-radius: 50%;
+      cursor: pointer;
+
+      padding: calc(var(--index) * 1.5);
+      border: calc(var(--index) * 0.2) solid transparent;
+
+      transition: all 0.2s ease-in-out;
+
+      transform: scale(1.05);
+
+      img {
+        width: 140%;
+        height: 140%;
+        object-fit: cover;
+
+        position: absolute;
+
+        transition: all 0.2s ease-in-out;
+
+        transform: scale(1.05);
+      }
+
+      &:hover {
+        border: calc(var(--index) * 0.2) solid var(--color-primary);
+        transform: scale(1.2);
+
+        img {
+          transform: scale(0.85);
+        }
+      }
+    }
+  }
 </style>

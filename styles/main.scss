@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;700;900&display=swap');
+
+@import "animations";
+
+:root {
+  --color-primary: #0062bd;
+  --index: calc(1vw + 1vh);
+  --gap: 1em;
+}
+
+html, body {
+  background: #1e1e20;
+  font-family: 'Mulish', sans-serif;
+  font-size: var(--index);
+
+  margin: 0;
+  padding: 0;
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  outline: 0;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  box-sizing: border-box;
+  position: relative;
+
+  color: white;
+}
+
+.noSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
