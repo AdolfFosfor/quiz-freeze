@@ -14,7 +14,7 @@
           style="margin: calc(var(--index) * 1) calc(var(--index) * 0.5)"
           @onClick="to(item)"
         >
-          Hello World
+          page 🤌🏻 {{ item }}
         </Button>
       </Grid>
     </Grid>
