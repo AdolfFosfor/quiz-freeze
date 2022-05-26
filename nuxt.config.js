@@ -27,12 +27,12 @@ export default {
 
   pwa: {
     icon: {
-      // source: 'static/pwa.png',
+      source: 'static/pwa.png',
     },
     manifest: {
       name: 'Quiz Freeze',
       lang: 'ru',
-      short_name: 'quiz-freeze',
+      short_name: 'Quiz Freeze',
       theme_color: '#1e1e20',
     },
     meta: {
