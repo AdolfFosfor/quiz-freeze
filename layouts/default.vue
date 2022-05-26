@@ -1,10 +1,18 @@
 <template>
-  <Grid class="app" center-j center-i>
-    <Pagination v-if="$route.name === 'quiz-id'" />
-    <Account />
+  <div ref="app">
+    <Grid class="app" center-j center-i>
+      <Grid class="logo">
+        <nuxt-link to="/" class="link" />
 
-    <Nuxt />
-  </Grid>
+        <img src="/logo.svg" alt="Quiz Freeze" />
+      </Grid>
+
+      <Pagination v-if="$route.name === 'quiz-id'" />
+      <Account />
+
+      <Nuxt />
+    </Grid>
+  </div>
 </template>
 
 <script>
@@ -43,5 +51,16 @@
     height: 100vh;
 
     padding-top: calc(var(--index) * 3);
+  }
+
+  .logo {
+    position: absolute;
+    top: calc(var(--index) * 1);
+
+    width: calc(var(--index) * 5);
+
+    img {
+      width: 100%;
+    }
   }
 </style>

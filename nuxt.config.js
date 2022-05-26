@@ -24,4 +24,24 @@ export default {
   modules: [],
 
   build: {},
+
+  pwa: {
+    icon: {
+      // source: 'static/pwa.png',
+    },
+    manifest: {
+      name: 'Quiz Freeze',
+      lang: 'ru',
+      short_name: 'quiz-freeze',
+      theme_color: '#0062bd',
+    },
+    meta: {
+      mobileAppIOS: true,
+    },
+  },
+
+  server: {
+    host: '0.0.0.0',
+    port: 3000,
+  },
 };

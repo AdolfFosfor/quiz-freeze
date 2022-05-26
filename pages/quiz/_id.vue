@@ -11,7 +11,7 @@
           v-for="(item, i) of 4"
           :key="i"
           :to="`/quiz/${item}`"
-          style="margin: calc(var(--index) * 1) calc(var(--index) * 0.5)"
+          style="margin: calc(var(--index) * 0.5) calc(var(--index) * 0.5)"
           @onClick="to(item)"
         >
           page 🤌🏻 {{ item }}

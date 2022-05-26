@@ -2,7 +2,9 @@
   <button
     class="noSelect"
     :style="`${
-      $store.state.mobile ? 'font-size: calc(var(--index) * 1.1); width: 70vw' : 'font-size: calc(var(--index) * 0.7)'
+      $store.state.mobile
+        ? 'padding: calc(var(--index) * 2) calc(var(--index) * 2); font-size: calc(var(--index) * 1.1); border-radius: calc(var(--index) * 0.8); width: 70vw'
+        : 'padding: calc(var(--index) * 1) calc(var(--index) * 2); font-size: calc(var(--index) * 0.7); border-radius: calc(var(--index) * 0.3);'
     };`"
     @click="$emit('onClick', $event)"
   >
@@ -31,9 +33,6 @@
     font-weight: bold;
 
     background-color: var(--color-primary);
-    padding: calc(var(--index) * 1) calc(var(--index) * 2);
-
-    border-radius: calc(var(--index) * 0.3);
 
     transition: all 0.2s ease-in-out;
 
@@ -46,15 +45,5 @@
       filter: brightness(1.1);
       transform: translateY(2px);
     }
-  }
-
-  .link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
-
-    width: 100%;
-    height: 100%;
   }
 </style>
