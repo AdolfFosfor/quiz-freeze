@@ -23,7 +23,7 @@
     top: 0;
     right: 0;
 
-    padding: calc(var(--index) * 2) calc(var(--index) * 3);
+    padding: calc(var(--index) * 3) calc(var(--index) * 3);
 
     .button {
       overflow: hidden;
