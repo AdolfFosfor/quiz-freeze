@@ -55,7 +55,7 @@
 
   .logo {
     position: absolute;
-    top: calc(var(--index) * 1);
+    top: calc(var(--index) * 2);
 
     width: calc(var(--index) * 5);
 
