@@ -35,6 +35,7 @@
 
 <style lang="scss" scoped>
   .grid {
+    width: 100%;
     display: flex;
   }
 </style>

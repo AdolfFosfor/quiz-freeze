@@ -1,5 +1,5 @@
 <template>
-  <div ref="page" class="main-page">
+  <div ref="page" class="page">
     <Grid column center-i center-j>
       <Button :to="`/quiz/1`"> Start Quiz </Button>
     </Grid>
@@ -27,11 +27,3 @@
     },
   };
 </script>
-
-<style>
-  .main-page {
-    max-width: 80%;
-
-    text-align: center;
-  }
-</style>

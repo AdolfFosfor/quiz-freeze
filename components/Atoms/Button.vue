@@ -1,22 +1,5 @@
 <template>
-  <button
-    class="noSelect"
-    :style="`${
-      $store.state.mobile
-        ? `
-        padding: calc(var(--index) * 2) calc(var(--index) * 2);
-        font-size: calc(var(--index) * 1.1);
-        border-radius: calc(var(--index) * 0.8); width: 70vw;`
-        : `
-        padding: calc(var(--index) * 1) calc(var(--index) * 2);
-        font-size: calc(var(--index) * 0.7);
-        border-radius: calc(var(--index) * 0.6);
-          `
-    }
-    ${full ? 'width: 100%;' : ''}
-    `"
-    @click="$emit('onClick', $event)"
-  >
+  <button class="noSelect" @click="$emit('onClick', $event)">
     <nuxt-link v-if="to" :to="to" class="link" />
     <slot />
   </button>
@@ -30,13 +13,14 @@
         type: String,
         default: undefined,
       },
-      full: Boolean,
     },
   };
 </script>
 
 <style lang="scss" scoped>
   button {
+    width: 100%;
+
     border: none;
     cursor: pointer;
 
@@ -45,6 +29,14 @@
     background-color: var(--color-primary);
 
     transition: all 0.2s ease-in-out;
+
+    padding: calc(var(--index) * 1);
+    border-radius: calc(var(--index) * 0.6);
+
+    @media only screen and (max-width: 768px) {
+      padding: calc(var(--index) * 1.6);
+      font-size: calc(var(--index) * 1.2);
+    }
 
     &:hover {
       filter: brightness(1.2);

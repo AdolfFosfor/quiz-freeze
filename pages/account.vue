@@ -1,5 +1,5 @@
 <template>
-  <div ref="page">
+  <div ref="page" class="page">
     <Grid column center-i center-j>
       <!--      <div style="margin-bottom: calc(var(&#45;&#45;index) * 1)">Hello Account Page</div>-->
 
@@ -7,7 +7,7 @@
 
       <!--      <Input label="password" />-->
 
-      <Button full style="margin-top: calc(var(--index) * 1)">save</Button>
+      <Button style="margin-top: calc(var(--index) * 1)">save</Button>
       <!--      <Button full style="margin-top: calc(var(&#45;&#45;index) * 1)">log out</Button>-->
     </Grid>
   </div>

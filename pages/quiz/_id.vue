@@ -1,5 +1,5 @@
 <template>
-  <div ref="page" class="question">
+  <div ref="page" class="page">
     <Grid column center-i center-j>
       <div class="text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis, culpa cupiditate error fugiat illum in maiores
@@ -11,7 +11,7 @@
           v-for="(item, i) of 4"
           :key="i"
           :to="`/quiz/${item}`"
-          style="margin: calc(var(--index) * 0.5) calc(var(--index) * 0.5)"
+          :style="$store.state.mobile ? 'margin: calc(var(--index) * 0.8) 0;' : 'margin: 0 calc(var(--index) * 0.5);'"
           @onClick="to(item)"
         >
           page 🤌🏻 {{ item }}
@@ -50,13 +50,9 @@
 </script>
 
 <style>
-  .question {
-    max-width: 80%;
-
-    text-align: center;
-  }
   .text {
+    text-align: center;
     font-size: calc(var(--index) * 1.4);
-    margin-bottom: 2rem;
+    margin-bottom: calc(var(--index) * 2);
   }
 </style>
