@@ -1,6 +1,6 @@
 export default {
   head: {
-    title: 'Quiz Freeze',
+    title: 'Quiz Freeze 🧩',
     htmlAttrs: {
       lang: 'en',
     },
@@ -10,10 +10,23 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,500;0,600;0,700;0,800;0,900;1,200;1,300&display=swap',
+      },
+    ],
   },
 
   css: ['@/styles/main.scss'],
+
+  layoutTransition: {
+    name: 'layout',
+    mode: 'out-in',
+  },
 
   plugins: [],
 
@@ -38,6 +51,10 @@ export default {
     meta: {
       mobileAppIOS: true,
     },
+  },
+
+  env: {
+    backend: 'http://167.172.98.224:3000/api',
   },
 
   server: {

@@ -15,7 +15,7 @@
     left: 0;
     opacity: 0.4;
 
-    font-size: calc(var(--index) * 2);
+    font-size: 2rem;
     padding: calc(var(--index) * 4) calc(var(--index) * 0.5);
 
     font-weight: 900;

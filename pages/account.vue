@@ -1,5 +1,5 @@
 <template>
-  <div ref="page" class="page">
+  <div>
     <Grid column center-i center-j>
       <!--      <div style="margin-bottom: calc(var(&#45;&#45;index) * 1)">Hello Account Page</div>-->
 
@@ -7,7 +7,7 @@
 
       <!--      <Input label="password" />-->
 
-      <Button style="margin-top: calc(var(--index) * 1)">save</Button>
+      <Button style="margin-top: 1rem">save</Button>
       <!--      <Button full style="margin-top: calc(var(&#45;&#45;index) * 1)">log out</Button>-->
     </Grid>
   </div>
@@ -20,19 +20,5 @@
   export default {
     name: 'Account',
     components: { Button, Input, Grid },
-    mounted() {
-      this.$refs.page.classList.add('fade-in');
-    },
-
-    beforeDestroy() {
-      this.$refs.page.classList.remove('fade-in');
-      this.$refs.page.classList.add('fade-out');
-    },
-
-    methods: {
-      log(e) {
-        console.log(e);
-      },
-    },
   };
 </script>

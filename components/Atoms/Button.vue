@@ -1,18 +1,23 @@
 <template>
-  <button class="noSelect" @click="$emit('onClick', $event)">
+  <button class="noSelect" :type="submit ? 'submit' : 'button'" :style="spacingStyles" @click="$emit('onClick', $event)">
     <nuxt-link v-if="to" :to="to" class="link" />
     <slot />
   </button>
 </template>
 
 <script>
+  import Spacing from '~/components/Modules/Spacing';
+
   export default {
     name: 'Button',
+    extends: Spacing,
     props: {
       to: {
         type: String,
         default: undefined,
       },
+
+      submit: Boolean,
     },
   };
 </script>
@@ -30,12 +35,12 @@
 
     transition: all 0.2s ease-in-out;
 
-    padding: calc(var(--index) * 1);
-    border-radius: calc(var(--index) * 0.6);
+    padding: 1rem 5rem;
+    border-radius: 0.8rem;
 
     @media only screen and (max-width: 768px) {
-      padding: calc(var(--index) * 1.6);
-      font-size: calc(var(--index) * 1.2);
+      padding: 1.6rem;
+      font-size: 1.2rem;
     }
 
     &:hover {

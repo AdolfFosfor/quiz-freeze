@@ -23,6 +23,7 @@
 
   export default {
     components: { Grid, Pagination, Account },
+    transition: 'page',
     computed: {
       ...mapState(['mobile']),
     },
@@ -50,12 +51,12 @@
     width: 100vw;
     height: 100vh;
 
-    padding-top: calc(var(--index) * 3);
+    padding-top: 3rem;
   }
 
   .logo {
     position: absolute;
-    top: calc(var(--index) * 3);
+    top: 3rem;
 
     width: calc(var(--index) * 5);
 

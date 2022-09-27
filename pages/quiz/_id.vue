@@ -1,5 +1,5 @@
 <template>
-  <div ref="page" class="page">
+  <div>
     <Grid column center-i center-j>
       <div class="text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis, culpa cupiditate error fugiat illum in maiores
@@ -11,7 +11,7 @@
           v-for="(item, i) of 4"
           :key="i"
           :to="`/quiz/${item}`"
-          :style="$store.state.mobile ? 'margin: calc(var(--index) * 0.8) 0;' : 'margin: 0 calc(var(--index) * 0.5);'"
+          :style="$store.state.mobile ? 'margin: 0.8rem 0;' : 'margin: 0 calc(var(--index) * 0.5);'"
           @onClick="to(item)"
         >
           page 🤌🏻 {{ item }}
@@ -32,15 +32,6 @@
       ...mapState(['mobile']),
     },
 
-    mounted() {
-      this.$refs.page.classList.add('fade-in');
-    },
-
-    beforeDestroy() {
-      this.$refs.page.classList.remove('fade-in');
-      this.$refs.page.classList.add('fade-out');
-    },
-
     methods: {
       to(e) {
         console.log(`Hello Button №${e}`);
@@ -53,6 +44,6 @@
   .text {
     text-align: center;
     font-size: calc(var(--index) * 1.4);
-    margin-bottom: calc(var(--index) * 2);
+    margin-bottom: 2rem;
   }
 </style>

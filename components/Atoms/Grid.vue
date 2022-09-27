@@ -10,6 +10,7 @@
     ${endI && 'align-items: flex-end'};
     ${column && 'flex-direction: column'};
     ${wrap && 'flex-wrap: wrap'};
+    ${spacingStyles}
   `"
   >
     <slot />
@@ -17,8 +18,11 @@
 </template>
 
 <script>
+  import Spacing from '~/components/Modules/Spacing';
+
   export default {
     name: 'Grid',
+    extends: Spacing,
     props: {
       centerJ: Boolean,
       centerI: Boolean,
