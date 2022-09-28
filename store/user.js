@@ -65,6 +65,7 @@ export const actions = {
       localStorage.setItem('accessToken', res.response.accessToken);
 
       dispatch('setUser', res.response.accessToken);
+      await this.$router.push('/account');
     } catch (e) {
       console.error(e);
     }

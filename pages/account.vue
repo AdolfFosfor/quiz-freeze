@@ -1,8 +1,11 @@
 <template>
   <Grid column center-i center-j :width="mobile ? 80 : 60">
-    <div style="text-align: center">
-      {{ account }}
-    </div>
+    <div style="margin-bottom: 1rem">id: {{ account.id }}</div>
+    <div style="margin-bottom: 1rem">name: {{ account.name }}</div>
+    <div style="margin-bottom: 1rem">email: {{ account.email }}</div>
+    <div style="margin-bottom: 1rem">media: {{ account.media }}</div>
+    <div style="margin-bottom: 1rem">registrationStatus: {{ account.registrationStatus }}</div>
+    <div style="margin-bottom: 1rem">createdAt: {{ account.createdAt }}</div>
   </Grid>
 </template>
 

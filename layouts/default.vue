@@ -59,7 +59,7 @@
     position: absolute;
     top: 3rem;
 
-    width: calc(var(--index) * 5);
+    width: 5rem;
 
     transition: all 200ms ease-in-out;
 

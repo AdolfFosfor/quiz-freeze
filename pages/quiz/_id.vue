@@ -10,7 +10,7 @@
         v-for="(item, i) of 4"
         :key="i"
         :to="`/quiz/${item}`"
-        :style="$store.state.mobile ? 'margin: 0.8rem 0;' : 'margin: 0 calc(var(--index) * 0.5);'"
+        :style="$store.state.mobile ? 'margin: 0.8rem 0;' : 'margin: 0 0.5rem;'"
         @onClick="to(item)"
       >
         page 🤌🏻 {{ item }}
@@ -41,7 +41,7 @@
 <style>
   .text {
     text-align: center;
-    font-size: calc(var(--index) * 1.4);
+    font-size: 1.4rem;
     margin-bottom: 2rem;
   }
 </style>
