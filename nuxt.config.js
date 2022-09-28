@@ -57,7 +57,7 @@ export default {
   },
 
   env: {
-    backend: 'http://167.172.98.224:3000/api',
+    backend: 'https://api.quiz-freeze.site/api',
   },
 
   server: {

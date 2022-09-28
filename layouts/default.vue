@@ -33,15 +33,22 @@
       this.$nextTick(() => {
         window.addEventListener('resize', this.onResize);
       });
+      window.addEventListener('storage', this.storageListener);
     },
     beforeDestroy() {
       window.removeEventListener('resize', this.onResize);
+      document.removeEventListener('storage', this.storageListener);
     },
     methods: {
       ...mapMutations(['setMobile']),
+      ...mapMutations('user', ['setAccount']),
 
       onResize() {
         this.setMobile(window.innerWidth < 768);
+      },
+
+      storageListener() {
+        if (!localStorage.getItem('accessToken')) this.setAccount(false);
       },
     },
   };
