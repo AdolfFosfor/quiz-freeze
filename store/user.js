@@ -4,16 +4,27 @@ export const state = () => ({
 });
 
 export const actions = {
-  async register({ state }, value) {
-    const { name, email, password } = value;
+  async setUser({ state, commit }, token) {
+    commit('setAccount', []);
+    console.log(token);
+    try {
+      const response = await fetch(`${process.env.backend}/users/profile`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    console.log(
-      JSON.stringify({
-        name,
-        email,
-        password,
-      })
-    );
+      const res = await response.json();
+      commit('setAccount', res.response);
+    } catch (e) {
+      console.error(e);
+    }
+  },
+
+  async register({ state }, form) {
+    const { name, email, password } = form;
 
     try {
       await fetch(`${process.env.backend}/auth/registration`, {
@@ -31,10 +42,37 @@ export const actions = {
       console.error(e);
     }
   },
+
+  async login({ state, dispatch }, form) {
+    const { email, password } = form;
+
+    try {
+      const response = await fetch(`${process.env.backend}/auth/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      const res = await response.json();
+
+      console.log(res.response);
+
+      localStorage.setItem('accessToken', res.response.accessToken);
+
+      dispatch('setUser', res.response.accessToken);
+    } catch (e) {
+      console.error(e);
+    }
+  },
 };
 
 export const mutations = {
-  setUser(state, value) {
-    state.user = value;
+  setAccount(state, value) {
+    state.account = value;
   },
 };

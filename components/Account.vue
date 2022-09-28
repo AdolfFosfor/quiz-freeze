@@ -1,8 +1,8 @@
 <template>
   <div class="account">
     <Grid center-j center-i>
-      <Grid class="button fade-fast" center-j center-i>
-        <nuxt-link :to="account ? '/account' : '/register'" class="link" />
+      <Grid class="button fade-fast" center-j center-i :style="`background: ${account ? 'var(--color-primary)' : '#a9a9a9'};`">
+        <nuxt-link :to="account ? '/account' : '/login'" class="link" />
 
         <img src="/icons/user.svg" alt="User Icon" />
       </Grid>
@@ -34,7 +34,6 @@
 
     .button {
       overflow: hidden;
-      background-color: #a9a9a9;
       border-radius: 50%;
       cursor: pointer;
 

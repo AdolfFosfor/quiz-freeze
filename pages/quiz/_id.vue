@@ -1,24 +1,22 @@
 <template>
-  <div>
-    <Grid column center-i center-j>
-      <div class="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis, culpa cupiditate error fugiat illum in maiores
-        maxime molestiae non optio possimus quaerat repellendus reprehenderit voluptates? Dolorem ea quod voluptatum.
-      </div>
+  <Grid column center-i center-j :width="80">
+    <div class="text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis, culpa cupiditate error fugiat illum in maiores
+      maxime molestiae non optio possimus quaerat repellendus reprehenderit voluptates? Dolorem ea quod voluptatum.
+    </div>
 
-      <Grid :column="mobile">
-        <Button
-          v-for="(item, i) of 4"
-          :key="i"
-          :to="`/quiz/${item}`"
-          :style="$store.state.mobile ? 'margin: 0.8rem 0;' : 'margin: 0 calc(var(--index) * 0.5);'"
-          @onClick="to(item)"
-        >
-          page 🤌🏻 {{ item }}
-        </Button>
-      </Grid>
+    <Grid :column="mobile">
+      <Button
+        v-for="(item, i) of 4"
+        :key="i"
+        :to="`/quiz/${item}`"
+        :style="$store.state.mobile ? 'margin: 0.8rem 0;' : 'margin: 0 calc(var(--index) * 0.5);'"
+        @onClick="to(item)"
+      >
+        page 🤌🏻 {{ item }}
+      </Button>
     </Grid>
-  </div>
+  </Grid>
 </template>
 
 <script>

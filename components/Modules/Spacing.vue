@@ -3,10 +3,10 @@
     name: 'Spacing',
 
     props: {
-      // width: {
-      //   type: [String, Number],
-      //   default: undefined,
-      // },
+      width: {
+        type: [String, Number],
+        default: undefined,
+      },
 
       py: {
         type: [String, Number],
@@ -59,7 +59,7 @@
       spacingStyles() {
         let styles = ``;
 
-        // if (this.width) styles = `${styles} width: ${this.width}%;`;
+        if (this.width) styles = `${styles} width: ${this.width}%;`;
 
         if (this.py) styles = `${styles} padding-top: ${this.py}rem; padding-bottom: ${this.py}rem;`;
         if (this.px) styles = `${styles} padding-right: ${this.px}rem; padding-left: ${this.px}rem;`;

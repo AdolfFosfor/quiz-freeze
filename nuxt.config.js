@@ -1,4 +1,5 @@
 export default {
+  ssr: false,
   head: {
     title: 'Quiz Freeze 🧩',
     htmlAttrs: {
@@ -27,6 +28,8 @@ export default {
     name: 'layout',
     mode: 'out-in',
   },
+
+  middleware: ['account'],
 
   plugins: [],
 

@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <Grid column center-i center-j>
-      <Button :to="`/quiz/1`"> Start Quiz </Button>
-    </Grid>
-  </div>
+  <Grid column center-i center-j :width="mobile ? 80 : 35">
+    <Button :to="`/quiz/1`"> Start Quiz </Button>
+  </Grid>
 </template>
 
 <script>

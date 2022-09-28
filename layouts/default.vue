@@ -23,6 +23,7 @@
 
   export default {
     components: { Grid, Pagination, Account },
+    middleware: 'account',
     transition: 'page',
     computed: {
       ...mapState(['mobile']),

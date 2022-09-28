@@ -63,7 +63,7 @@
     width: 100%;
 
     font-size: 0.8rem;
-    line-height: 3.5;
+    line-height: 3rem;
 
     font-weight: 600;
     padding: 0 1.5rem;

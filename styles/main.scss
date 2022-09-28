@@ -47,6 +47,16 @@ input:-webkit-autofill {
   color: white;
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: black;
+}
+
+::selection {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .noSelect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
