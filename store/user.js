@@ -1,3 +1,5 @@
+const TOKEN = localStorage.getItem('accessToken');
+
 export const state = () => ({
   account: false,
   // token: false,
@@ -6,9 +8,8 @@ export const state = () => ({
 export const actions = {
   async setUser({ state, commit }, token) {
     commit('setAccount', []);
-    console.log(token);
     try {
-      const response = await fetch(`${process.env.backend}/users/profile`, {
+      const response = await fetch(`${process.env.backend}/api/users/profile`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +28,7 @@ export const actions = {
     const { name, email, password } = form;
 
     try {
-      await fetch(`${process.env.backend}/auth/registration`, {
+      await fetch(`${process.env.backend}/api/auth/registration`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +48,7 @@ export const actions = {
     const { email, password } = form;
 
     try {
-      const response = await fetch(`${process.env.backend}/auth/login`, {
+      const response = await fetch(`${process.env.backend}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -60,12 +61,29 @@ export const actions = {
 
       const res = await response.json();
 
-      console.log(res.response);
-
       localStorage.setItem('accessToken', res.response.accessToken);
 
       dispatch('setUser', res.response.accessToken);
       await this.$router.push('/account');
+    } catch (e) {
+      console.error(e);
+    }
+  },
+
+  async uploadImage({ state, dispatch }, image) {
+    const payload = new FormData();
+    payload.append('file', image);
+
+    try {
+      await fetch(`${process.env.backend}/api/users/profile-image`, {
+        method: 'POST',
+        headers: {
+          // 'Content-Type': 'application/json',
+          Authorization: `Bearer ${TOKEN}`,
+        },
+        body: payload,
+      });
+      dispatch('setUser', TOKEN);
     } catch (e) {
       console.error(e);
     }

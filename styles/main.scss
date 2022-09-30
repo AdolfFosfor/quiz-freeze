@@ -7,6 +7,13 @@
   --gap: 1em;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
 html, body {
   font-size: calc(var(--index) * 0.6);
 }

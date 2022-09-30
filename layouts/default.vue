@@ -8,7 +8,7 @@
       </Grid>
 
       <Pagination v-if="$route.name === 'quiz-id'" />
-      <Account />
+      <Account position="absolute" t="0" r="0" link />
 
       <Nuxt />
     </Grid>
@@ -27,6 +27,7 @@
     transition: 'page',
     computed: {
       ...mapState(['mobile']),
+      ...mapState('user', ['account']),
     },
     mounted() {
       this.setMobile(window.innerWidth < 768);
