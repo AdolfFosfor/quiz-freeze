@@ -29,6 +29,7 @@
 
       uppercase: Boolean,
       underline: Boolean,
+      center: Boolean,
     },
     computed: {
       whatIs() {
@@ -55,6 +56,7 @@
         if (this.h6) styles = `${styles} font-size: 1.5rem; font-weight: 600;`;
         if (this.uppercase) styles = `${styles} text-transform: uppercase;`;
         if (this.underline) styles = `${styles} text-decoration: underline;`;
+        if (this.center) styles = `${styles} text-align: center;`;
         // else styles = `${styles} font-size: 1rem; font-weight: 400;`;
 
         if (this.size) styles = `${styles} font-size: ${this.size}rem;`;
