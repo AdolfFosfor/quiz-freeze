@@ -1,5 +1,5 @@
 <template>
-  <div class="account noSelect" :style="spacingStyles" title="Click to Upload Image" @click="$emit('click')">
+  <div class="account noSelect" :style="spacingStyles" title="Нажмите, чтоб загрузить изображение" @click="$emit('click')">
     <Grid center-j center-i>
       <Grid class="button fade-fast" center-j center-i :style="`background: ${account ? 'var(--color-primary)' : '#a9a9a9'};`">
         <nuxt-link v-if="link" :to="account ? '/account' : '/login'" class="link" />
