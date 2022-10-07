@@ -1,5 +1,5 @@
 <template>
-  <button class="noSelect" :type="submit ? 'submit' : 'button'" :style="spacingStyles" @click="$emit('onClick', $event)">
+  <button class="noSelect" :type="submit ? 'submit' : 'button'" :style="spacingStyles" @click="$emit('click', $event)">
     <nuxt-link v-if="to" :to="to" class="link" />
     <slot />
   </button>
@@ -25,6 +25,10 @@
 <style lang="scss" scoped>
   button {
     width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     border: none;
     cursor: pointer;

@@ -6,7 +6,11 @@
 
     <Words h3>{{ account.name }}</Words>
     <Words>{{ account.email }}</Words>
-    <Words mt="1" size="0.8" underline>Registered at: {{ registered }}</Words>
+    <Words mt="1" size="0.8" underline>Дата Регистрации: {{ registered }}</Words>
+
+    <Grid position="absolute" ta="100" center-j center-i>
+      <Button position="absolute" @click="logout">Выход</Button>
+    </Grid>
   </Grid>
 </template>
 
@@ -16,10 +20,11 @@
   import Grid from '~/components/Atoms/Grid';
   import AccountButton from '~/components/Account';
   import Words from '~/components/Atoms/Words';
+  import Button from '~/components/Atoms/Button';
 
   export default {
     name: 'Account',
-    components: { Words, AccountButton, Grid },
+    components: { Button, Words, AccountButton, Grid },
 
     computed: {
       ...mapState(['mobile']),
@@ -28,14 +33,18 @@
       registered() {
         let time = null;
         if (this.account.createdAt) {
-          time = new Date(this.account.createdAt).toDateString();
+          time = new Date(this.account.createdAt).toLocaleString('ru', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          });
         }
         return time;
       },
     },
 
     methods: {
-      ...mapActions('user', ['uploadImage']),
+      ...mapActions('user', ['uploadImage', 'logout']),
     },
   };
 </script>

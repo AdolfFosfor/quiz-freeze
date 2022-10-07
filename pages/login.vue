@@ -4,8 +4,10 @@
       <Input label="email" required type="email" @input="set('email', $event)" />
       <Input label="password" required type="password" @input="set('password', $event)" />
 
-      <Button mt="5" submit>Log In</Button>
-      <Grid py="1" center-j> Are You new one? <nuxt-link to="/register" style="margin-left: 0.2rem">Register</nuxt-link> </Grid>
+      <Button my="1" submit>Войти</Button>
+      <Grid py="1" center-j>
+        У вас нет аккаунта? <nuxt-link to="/register" style="margin-left: 0.2rem">Регистрация</nuxt-link>
+      </Grid>
     </form>
   </Grid>
 </template>

@@ -7,7 +7,7 @@
         <img src="/logo.svg" alt="Quiz Freeze" />
       </Grid>
 
-      <Pagination v-if="$route.name === 'quiz-id'" />
+      <Pagination v-if="$route.name === 'quiz'" position="absolute" t="0" l="0" />
       <Account position="absolute" t="0" r="0" link />
 
       <Nuxt />

@@ -1,6 +1,6 @@
 <template>
   <Grid column center-i center-j :width="mobile ? 80 : 35">
-    <Button :to="`/quiz/1`"> Start Quiz </Button>
+    <Button :to="account ? '/quiz' : 'login'"> {{ account ? 'Начать тест 📄' : 'Войти в аккаунт' }} </Button>
   </Grid>
 </template>
 
@@ -13,6 +13,7 @@
     components: { Grid, Button },
     computed: {
       ...mapState(['mobile']),
+      ...mapState('user', ['account']),
     },
   };
 </script>

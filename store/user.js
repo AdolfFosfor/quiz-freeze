@@ -88,6 +88,12 @@ export const actions = {
       console.error(e);
     }
   },
+
+  async logout({ commit }) {
+    localStorage.removeItem('accessToken');
+    commit('setAccount', false);
+    await this.$router.push('/');
+  },
 };
 
 export const mutations = {
